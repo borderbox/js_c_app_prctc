@@ -1,23 +1,33 @@
 'use strict';
 
-const numberOfFilms = prompt('Сколько фильмов выуже посмотрели?', 'число фильмов'),
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', 'число фильмов'),
 
  personalMovieDB = {
     count: numberOfFilms,
-    movies: {
-        /* questionMovie1: questionRating1,
-        questionMovie2: questionRating2 */
-    },
+    movies: {},
     actors: {},
     genres: [],
     privat: false
-},
+};
+ 
+if (personalMovieDB.count < 10) {
+    alert("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count == 10 || personalMovieDB.count <= 30) {
+    alert("Вы классический зритель");
+} else {
+    alert("Вы киноман");
+}
 
-    questionMovie1 = prompt('Один из последних просмотренных фильмов?', ''),
-    questionRating1 = prompt('На сколько оцените его?', ''),
-    questionMovie2 = prompt('Один из последних просмотренных фильмов?', ''),
-    questionRating2 = prompt('На сколько оцените его?', '');
+for (let i = 0; i < 2; i++) {
+    let questionMovie = prompt('Один из последних просмотренных фильмов?', '');
+    while (questionMovie === '' || questionMovie === null || questionMovie.length > 50) {
+        questionMovie = prompt('Один из последних просмотренных фильмов?', '');
+    }
+    let questionRating = prompt('На сколько оцените его?', '');
+    while (questionRating === '' || questionRating === null || questionRating.length > 50) {
+        questionRating = prompt('На сколько оцените его?', '');
+    }
+    personalMovieDB.movies[questionMovie] = questionRating;
+}
 
-personalMovieDB.movies[questionMovie1] = questionRating1;
-personalMovieDB.movies[questionMovie2] = questionRating2;
 console.log(personalMovieDB);
