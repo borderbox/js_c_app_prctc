@@ -18,7 +18,8 @@ if (personalMovieDB.count < 10) {
     alert("Вы киноман");
 }
 
-for (let i = 0; i < 2; i++) {
+let i = 0;
+while (i < 2) {
     let questionMovie = prompt('Один из последних просмотренных фильмов?', '');
     while (questionMovie === '' || questionMovie === null || questionMovie.length > 50) {
         questionMovie = prompt('Один из последних просмотренных фильмов?', '');
@@ -28,6 +29,7 @@ for (let i = 0; i < 2; i++) {
         questionRating = prompt('На сколько оцените его?', '');
     }
     personalMovieDB.movies[questionMovie] = questionRating;
+    i++;
 }
 
 console.log(personalMovieDB);
