@@ -20,7 +20,7 @@ if (personalMovieDB.count < 10) {
     alert("Произошла ошибка");
 }
 
-/* for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 2; i++) {
     let questionMovie = prompt('Один из последних просмотренных фильмов?', '');
     while (questionMovie === '' || questionMovie === null || questionMovie.length > 50) {
         questionMovie = prompt('Один из последних просмотренных фильмов?', '');
@@ -32,4 +32,4 @@ if (personalMovieDB.count < 10) {
     personalMovieDB.movies[questionMovie] = questionRating;
 }
 
-console.log(personalMovieDB); */
+console.log(personalMovieDB);
